@@ -81,7 +81,7 @@
     "prompt": "Is your employer a large corporation or franchise, or a national chain?",
     "choices": [
       {
-        "next": "#note/big-national-chain-assumption",
+        "next": "#question/medical-benefits",
         "value": "yes",
         "text": "Yes"
       },
