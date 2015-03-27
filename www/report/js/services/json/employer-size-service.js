@@ -4,7 +4,7 @@ var EmployerSizeService = function() {
         var deferred = $.Deferred();
 
         if(typeof url == "undefined") {
-          this.url = "http://localhost:3000/v1/employer_size";
+          this.url = "http://minimum-wage-service.herokuapp.com/api/v1/employer_size";
         } else {
           this.url = url;
         }

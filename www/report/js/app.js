@@ -4,7 +4,6 @@
     var employerSizeService = new EmployerSizeService();
 
     $.when([employerSizeService.initialize()]).done(function() {
-      console.log("Services initialized");
       $(".submit").on("click", function(evt) {
         evt.preventDefault();
 
@@ -41,7 +40,9 @@
         }
 
         var deferred = employerSizeService.submitReport($("#employer-size-report").serializeObject());
-        deferred.done(function(){ window.location = "/"; });
+        deferred.done(function(){
+          window.location = "/"; 
+        });
       });
     });
 
