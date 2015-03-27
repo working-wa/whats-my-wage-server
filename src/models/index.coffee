@@ -18,6 +18,8 @@ config = switch process.env.NODE_ENV
     port: match[4]
     dialect: 'postgres'
     protocol: 'postgres'
+  else
+    config
 
 debug "Config: #{JSON.stringify config}"
 

@@ -5,7 +5,7 @@ express = require 'express'
 
 # Internal Dependencies
 models = require './models'
-routes = require './routes'
+api_routes = require './routes'
 
 # Initialize express server
 app = express()
@@ -17,7 +17,7 @@ app.set 'port', process.env.PORT ? 3000
 app.use bodyParser.json()
 
 # Add routes for attendance service api
-app.use '/v1', routes
+app.use '/api/v1', api_routes
 
 # Synchronize with database
 models.sequelize.sync().then () ->
