@@ -1,0 +1,1 @@
+--recursive --compilers mocha --compilers coffee:coffee-script/register

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Actor:normal|Open+Sans:400italic,700italic,400,700normal">
+
+    <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/pageslider.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+  <script id="home-tpl" type="text/template">
+    <div class="content-padded">
+      <h1 class="center app-title">Minimum Wage Calculator</h1>
+      <a href="#question/work-seattle" class="btn btn-block start-survey">Start</a>
+      <h5 class="center">Presented By:</h5>
+      <a href="http://workingwa.org"><img class="working-wa-logo center" src="img/working-wa-logo.png"></img></a>
+    </div>
+  </script>
+
+  <script id="question-tpl" type="text/template">
+    <header class="bar bar-nav">
+        <h1 class="title">{{summary}}</h1>
+        <a href="#" class="icon icon-refresh pull-right"></a>
+    </header>
+    <div class="content">
+      <div class="question-prompt">{{{prompt}}}</div>
+      {{#each choices}}
+        <a href="{{next}}" class="btn btn-block answer" data-question-id="{{../id}}" data-value="{{value}}">{{text}}</a>
+      {{/each}}
+      <div class="definitions"></div>
+      <div id="hourly-minimum-compensation" class="modal">
+        <header class="bar bar-nav">
+          <a class="icon icon-close pull-right" href="#hourly-minimum-compensation"></a>
+          <h1 class="title">hourly minimum compensation</h1>
+        </header>
+
+        <div class="content">
+          <p class="content-padded">hourly minimum compensation</p>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="result-tpl" type="text/template">
+    <header class="bar bar-nav">
+        <h1 class="title">What should your hourly wage be?</h1>
+        <a href="#" class="icon icon-refresh pull-right"></a>
+    </header>
+    <div class="content">
+        <ul class="table-view results-table">
+            {{#each this}}
+            <li class="table-view-cell result-row">
+                <div>
+                    {{wage}}
+                    <p>{{range}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="center question-prompt">Are you making less than this per hour? You may be a victim of wage theft. Please take action and:</div>
+<<<<<<< HEAD
+        <a href="http://www.seattle.gov/civilrights/labor-standards/wage-theft" class="btn btn-block btn-contrast-red">Report It!</a>
+=======
+        <a href="http://www.seattle.gov/civilrights/labor-standards/wage-theft" class="btn btn-block btn-contrast">Report It!</a>
+        
+        <div class="definitions"></div>
+    </div>
+  </script>
+
+  <script id="definitions-tpl" type="text/template">
+    {{#each this}}
+    <div id="{{id}}" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#{{id}}"></a>
+        <h1 class="title">{{text}}</h1>
+      </header>
+
+      <div class="content">
+        <p class="content-padded">{{text}}</p>
+      </div>
+>>>>>>> 180b9d0... Definition service mostly working
+    </div>
+    {{/each}}
+  </script>
+
+  <script src="cordova.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/fastclick.js"></script>
+  <script src="lib/handlebars.js"></script>
+  <script src="lib/pageslider.js"></script>
+  <script src="lib/router.js"></script>
+  <script src="lib/moment.js"></script>
+  <script src="lib/twix.js"></script>
+  <script src="lib/accounting.js"></script>
+  <script src="lib/readmore.js"></script>
+  <script src="js/services/memory/QuestionService.js"></script>
+  <script src="js/services/memory/AnswerService.js"></script>
+  <script src="js/services/memory/WageService.js"></script>
+  <script src="js/services/memory/DefinitionService.js"></script>
+  <script src="js/DefinitionsView.js"></script>
+  <script src="js/HomeView.js"></script>
+  <script src="js/QuestionView.js"></script>
+  <script src="js/ResultView.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

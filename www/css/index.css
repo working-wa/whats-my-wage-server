@@ -1,0 +1,188 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+body {
+  font-family: 'Open Sans';
+  color: rgb(22,70,49);
+}
+
+.title {
+  color: rgb(22,70,49);
+}
+
+.working-wa-logo {
+  max-width: 864px;
+  width: 100%;
+}
+
+.app-title {
+  font-weight: bold;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.answer {
+  color: white;
+  background-color: rgb(22,70,49);
+}
+
+.question-prompt {
+  font-size: 17px;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.results-table {
+  border-bottom-color: rgb(221, 221, 221);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.result-row {
+  padding-right: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-contrast {
+  color: white;
+  background-color: rgb(22,70,49);
+}
+
+.btn-contrast-red {
+  background-color: rgb(255,00,00);
+}
+
+.start-survey {
+  color: white;
+  background-color: rgb(144,220,0);
+
+}
+
+.ordinance-info {
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.certify-correct label {
+  display: inline-block;
+  width: 60%;
+}
+
+.certify-correct .toggle {
+  background-color: crimson;
+  display: inline-block;
+  float: right;
+}
+
+.certify-correct .toggle:before {
+  content: "No";
+  color: white;
+}
+
+.certify-correct .toggle.active {
+  background-color: #5cb85c;
+}
+
+.certify-correct .toggle.active:before {
+  content: "Yes"
+}
+
+.certify-correct {
+  padding-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.errors {
+  background-color: lightcoral;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.errors ul {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

@@ -1,0 +1,9 @@
+{
+  "dialect": "postgres",
+  "protocol": "postgres",
+  "database": "minwage",
+  "username": "minwage",
+  "password": "minwage",
+  "host": "127.0.0.1",
+  "port": null
+}

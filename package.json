@@ -1,0 +1,31 @@
+{
+  "name": "employee-count-reports-service",
+  "version": "1.0.0",
+  "description": "Service to track employee count reports",
+  "main": "src/app.coffee",
+  "scripts": {
+    "start": "node_modules/coffee-script/bin/coffee src/app.coffee",
+    "test": "NODE_ENV=test mocha"
+  },
+  "author": "Andrew E. Gall",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.12.0"
+    , "coffee-script": "~1.9.1"
+    , "config": "~1.12.0"
+    , "debug":"~2.1.2"
+    , "express":"~4.12.2"
+    , "moment": "~2.9.0"
+    , "pg": "~4.3.0"
+    , "pg-hstore": "~2.3.1"
+    , "sequelize": "~2.0.5"
+    , "sqlite3": "~3.0.5"
+    , "underscore": "1.8.2"
+  },
+  "devDependencies": {
+    "chai": "~2.1.1",
+    "chai-http": "~1.0.0",
+    "mocha": "~2.2.1"
+  },
+  "engine": "node >= 0.12.0"
+}
