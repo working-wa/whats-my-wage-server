@@ -19,6 +19,8 @@ config = switch process.env.NODE_ENV
     dialect: 'postgres'
     protocol: 'postgres'
 
+debug "Config: #{JSON.stringify config}"
+
 sequelize = new Sequelize(config.database, config.username, config.password, config)
 
 db =
