@@ -16,6 +16,9 @@ app.set 'port', process.env.PORT ? 3000
 # Add JSON Body Parser Middleware
 app.use bodyParser.json()
 
+app.use '/', express.static("www/app/www")
+app.use '/report', express.static("www/report")
+
 # Add routes for attendance service api
 app.use '/api/v1', api_routes
 
