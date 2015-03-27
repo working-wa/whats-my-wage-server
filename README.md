@@ -1,4 +1,4 @@
-# Attendance Service Documentation
+# Minimum Wage Server Documentation
 
 ## Setup
 
