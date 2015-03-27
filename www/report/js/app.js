@@ -41,6 +41,7 @@
         }
 
         var deferred = employerSizeService.submitReport($("#employer-size-report").serializeObject());
+        deferred.done(function(){ window.location = "/"; });
       });
     });
 
