@@ -9,6 +9,8 @@ config.logging = debug
 if process.env.DATABASE_URL?
   match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
 
+debug "Database URL: #{process.env.DATABASE_URL}"
+
 config = switch process.env.NODE_ENV
   when 'production'
     database: match[5]
