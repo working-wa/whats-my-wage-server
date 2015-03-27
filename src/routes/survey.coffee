@@ -8,6 +8,10 @@ questions = require '../data/questions.json'
 # Express Components
 router = express.Router()
 
+router.all "*", (req, res, next) ->
+  debug "In Survey router"
+  next()
+
 router.get '/question', (req, res) ->
   res.json(questions).end()
 

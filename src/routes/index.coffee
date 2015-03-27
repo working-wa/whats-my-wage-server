@@ -15,6 +15,7 @@ employer_size_router = require './employer_size'
 survey_router = require './survey'
 
 router.all '*', (req,res,next) ->
+  debug "In router"
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Content-Type, X-Requested-With")
   next()
