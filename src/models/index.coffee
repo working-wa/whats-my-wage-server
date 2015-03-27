@@ -6,7 +6,18 @@ underscore = require 'underscore'
 
 config.logging = debug
 
-debug "Config: #{JSON.stringify config}"
+if process.env.DATABASE_URL?
+  match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
+
+config = switch process.env.NODE_ENV
+  when 'production'
+    database: match[5]
+    username: match[1]
+    password: match[2]
+    host: match[3]
+    port: match[4]
+    dialect: 'postgres'
+    protocol: 'postgres'
 
 sequelize = new Sequelize(config.database, config.username, config.password, config)
 
