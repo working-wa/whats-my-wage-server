@@ -39,18 +39,6 @@
         "next": "#in-seattle-determination/address",
         "text": "Enter The Address Where You Work"
       },
-      {
-        "next": "#in-seattle-determination/business-name",
-        "text": "Enter Business Name"
-      },
-      {
-        "next": "#in-seattle-determination/top-50",
-        "text": "Choose From Top 50 Employers In The State"
-      },
-      {
-        "next": "#in-seattle-determination/map",
-        "text": "Indicate Where You Work On A Map"
-      }
     ]
   },
   {
