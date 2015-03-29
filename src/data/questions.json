@@ -32,8 +32,8 @@
     "prompt": "Choose one of these methods to determine if you are employed in Seattle:",
     "choices": [
       {
-        "next": "#in-seattle-determination/nearby",
-        "text": "Choose from Nearest 20 Businesses"
+        "next": "#in-seattle-determination/at-work",
+        "text": "At Work! Tell Me if My Workplace is in Seattle!"
       },
       {
         "next": "#in-seattle-determination/address",
