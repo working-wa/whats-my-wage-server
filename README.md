@@ -44,7 +44,3 @@ No Output
 
 * Run `npm test`
 * Currently using mocha as the test runner and chai-http to run integration tests against the service
-
-
-
-
