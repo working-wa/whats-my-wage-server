@@ -74,29 +74,29 @@
         "text": "Yes"
       },
       {
-        "next": "#question/methods-for-determining-employee-count",
+        "next": "#question/methods-for-determining-employer-size",
         "value": "no",
         "text": "No"
       },
       {
-        "next": "#question/methods-for-determining-employee-count",
+        "next": "#question/methods-for-determining-employer-size",
         "value": "",
         "text": "I Don't Know"
       }
     ]
   },
   {
-    "id": "methods-for-determining-employee-count",
+    "id": "methods-for-determining-employer-size",
     "summary": "Number of Employees?",
     "prompt": "Choose one of these methods to try looking up the number of employees:",
     "choices": [
       {
-        "next": "#employee-count-determination/name",
+        "next": "#employer-size-determination/name",
         "value": "yes",
         "text": "By Name"
       },
       {
-        "next": "#employee-count-determination/address",
+        "next": "#employer-size-determination/address",
         "value": "no",
         "text": "By Address"
       }
