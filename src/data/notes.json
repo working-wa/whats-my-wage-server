@@ -16,26 +16,5 @@
       ]
     },
     "next": "#question/number-employees"
-  },
-  {
-    "id": "minimum-compensation",
-    "title": "Minimum Compensation",
-    "explanation": [
-      "For example, let's say that your minimum wage is: $10/hr.",
-      "Your employer has to make sure that your tips and/or their contribution to your health care benefits add up to the minimum compensation of the minimum wage if these things are not provided: $11/hr in total.",
-      "This consideration of tips and benefits is only temporary and will phase out over the next few years as wages keep rising."
-    ],
-    "ordinance": {
-      "section": "B",
-      "href": "https://www.municode.com/library/wa/seattle/codes/municipal_code?nodeId=TIT14HURI_CH14.19MIWAMICORAEMPEWOSE_14.19.050HOMICOCH2EM",
-      "text": [
-        "Employers can meet the applicable hourly minimum compensation requirement through wages (including applicable commissions, piece-rate, and bonuses), tips and money paid by an employer towards an individual employee's medical benefits plan, provided that the Schedule 2 employer also meets the applicable hourly minimum wage requirements."
-      ]
-    },
-    "next": "#results",
-    "skip": {
-      "health-insurance": "no",
-      "tips": "no"
-    }
   }
 ]

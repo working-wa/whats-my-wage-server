@@ -142,12 +142,12 @@
     "prompt": "Do you receive tips?",
     "choices": [
       {
-        "next": "#note/minimum-compensation",
+        "next": "#results",
         "value": "yes",
         "text": "Yes"
       },
       {
-        "next": "#note/minimum-compensation",
+        "next": "#results",
         "value": "no",
         "text": "No"
       }
