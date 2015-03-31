@@ -53,8 +53,8 @@ wageSchedules = {
     {"wage": 11.0, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
     {"wage": 11.5, "time_range": {start: "2018-01-01", end: "2018-12-31"}},
     {"wage": 12.0, "time_range": {start: "2019-01-01", end: "2019-12-31"}},
-    {"wage": 13.5, "time_range": {start: "2020-01-01", end: "2020-12-31"}},
-    {"wage": 15.0, "time_range": {start: "2021-01-01", end: "2021-12-31"}}
+    {"wage": 15.75, "time_range": {start: "2020-01-01", end: "2020-12-31"}},
+    {"wage": 16.49, "time_range": {start: "2021-01-01", end: "2021-12-31"}}
   ],
   "Washington State": [
     {"wage":9.47,"time_range": {start: "2015-01-01", end: "2115-12-31"}}
