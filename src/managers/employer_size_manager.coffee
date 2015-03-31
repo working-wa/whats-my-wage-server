@@ -29,6 +29,7 @@ module.exports = class EmployerSizeManager
           @determineEmployerSizeFromReports employer, transaction, (err, determinedSize) =>
             return rollbackAndCallback(err) if err?
 
+            debug "Determined Size: #{determinedSize}"
             employer.size = determinedSize
 
             onSuccess = (employer) ->
