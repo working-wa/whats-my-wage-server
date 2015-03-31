@@ -34,7 +34,7 @@ module.exports = class EmployerSizeManager
             transaction.commit()
             cb null, employer
 
-          employer.save().then onSuccess, rollbackAndCallback
+          employer.save({ transaction }).then onSuccess, rollbackAndCallback
 
     models.sequelize.transaction().then onSuccessOfStartTransaction, onFailure
 
