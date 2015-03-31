@@ -61,7 +61,7 @@ wageSchedules = {
   ]
 }
 
-router.get '/wage', (req, res) ->
+router.post '/wage', (req, res) ->
   {answers} = req.body
   result = {}
 
