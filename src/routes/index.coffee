@@ -32,7 +32,7 @@ router.post '/wage_theft/report', (req, res) ->
 
   for entityKey,entity of req.body
     for fieldKey, field of req.body
-      form[wageTheftReportInfo.mapping[entityKey][fieldKey]] = v
+      form[wageTheftReportInfo.mapping[entityKey][fieldKey]] = field
 
   request.post {url: wageTheftReportInfo.post_url, form: form}, (err, httpResponse, body) ->
     return res.status(400).json({err, httpResponse, body}).end() if err?
