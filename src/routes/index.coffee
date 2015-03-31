@@ -30,8 +30,9 @@ wageTheftReportInfo =
 router.post '/wage_theft/report', (req, res) ->
   form = {}
 
-  for entityKey,entity of req.body
-    for fieldKey, field of req.body
+  for entityKey, entity of req.body
+    for fieldKey, field of entity
+      debug "#{entityKey} #{fieldKey} #{wageTheftReportInfo.mapping[entityKey][fieldKey]}"
       form[wageTheftReportInfo.mapping[entityKey][fieldKey]] = field
 
   request.post {url: wageTheftReportInfo.post_url, form: form}, (err, httpResponse, body) ->
