@@ -32,11 +32,37 @@ router.post '/wage_theft/report', (req, res) ->
 
   for entityKey, entity of req.body
     for fieldKey, field of entity
-      debug "#{entityKey} #{fieldKey} #{wageTheftReportInfo.mapping[entityKey][fieldKey]}"
       form[wageTheftReportInfo.mapping[entityKey][fieldKey]] = field
 
   request.post {url: wageTheftReportInfo.post_url, form: form}, (err, httpResponse, body) ->
-    return res.status(400).json({err, httpResponse, body}).end() if err?
+    if err?
+      console.log "Unsuccessfully posted wage theft: #{JSON.stringify req.body}"
+      return res.status(400).json({err, httpResponse, body}).end()
+
+    res.status(200).end()
+
+contactUsInfo =
+  post_url: "https://docs.google.com/forms/d/1FTlm-_10lrVszCE5eegwGSzpZCWenVwp7b_GfqBITs4/formResponse"
+  mapping:
+    employer:
+      name: "entry.786354004"
+    employee:
+      name: "entry.2064652974"
+      email: "entry.865525263"
+      phone: "entry.86958528"
+      comments: "entry.37898216"
+
+router.post '/contact_us', (req, res) ->
+  form = {}
+
+  for entityKey, entity of req.body
+    for fieldKey, field of entity
+      form[contactUsInfo.mapping[entityKey][fieldKey]] = field
+
+  request.post {url: contactUsInfo.post_url, form: form}, (err, httpResponse, body) ->
+    if err?
+      console.log "Unsuccessfully posted contact us: #{JSON.stringify req.body}"
+      return res.status(400).json({err, httpResponse, body}).end()
 
     res.status(200).end()
 
