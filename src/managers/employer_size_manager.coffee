@@ -12,7 +12,7 @@ module.exports = class EmployerSizeManager
     onSuccessOfStartTransaction = (transaction) =>
 
       rollbackAndCallback = (err) ->
-        #transaction.rollback()
+        transaction.rollback()
         cb err
 
       @createOrUpdateEmployer employer, { transaction }, (err, employer) =>
@@ -26,9 +26,7 @@ module.exports = class EmployerSizeManager
         @createEmployerSizeReport report, { transaction }, (err, report) =>
           return rollbackAndCallback(err) if err?
 
-          debug "Size: #{report.size}"
           employer.size = report.size
-          debug "Employer: #{JSON.stringify employer}"
 
           onSuccess = (employer) ->
             transaction.commit()
