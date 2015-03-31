@@ -26,17 +26,15 @@ module.exports = class EmployerSizeManager
         @createEmployerSizeReport report, { transaction }, (err, report) =>
           return rollbackAndCallback(err) if err?
 
-          @determineEmployerSizeFromReports employer, transaction, (err, determinedSize) =>
-            return rollbackAndCallback(err) if err?
+          debug "Size: #{report.size}"
+          employer.size = report.size
+          debug "Employer: #{JSON.stringify employer}"
 
-            debug "Determined Size: #{determinedSize}"
-            employer.size = determinedSize
+          onSuccess = (employer) ->
+            transaction.commit()
+            cb null, employer
 
-            onSuccess = (employer) ->
-              transaction.commit()
-              cb null, employer
-
-            employer.save().then onSuccess, rollbackAndCallback
+          employer.save().then onSuccess, rollbackAndCallback
 
     models.sequelize.transaction().then onSuccessOfStartTransaction, onFailure
 
