@@ -82,6 +82,9 @@ router.post '/wage', (req, res) ->
 
   intervals = []
 
+  debug "Schedule: #{schedule}"
+  debug "Schedule: #{wageSchedules[schedule]}"
+
   for wageInterval in [0..wageSchedules[schedule].length] by 1
     debug "Wage Interval #{wageInterval}"
     current = wageSchedules[schedule][wageInterval]
