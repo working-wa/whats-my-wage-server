@@ -26,38 +26,38 @@ router.get '/note', (req, res) ->
 # D = Schedule 2 employers (500 or fewer employees in the U.S.)
 wageSchedules = {
   "A": [
-    {"wage": 9.47, "time_range": moment("2014-01-01").twix("2015-03-27", {allDay: true})},
-    {"wage": 11.0, "time_range": moment("2015-03-28").twix("2015-12-31", {allDay: true})},
-    {"wage": 13.0, "time_range": moment("2016-01-01").twix("2016-12-31", {allDay: true})},
-    {"wage": 15.0, "time_range": moment("2017-01-01").twix("2018-12-31", {allDay: true})}
+    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
+    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
+    {"wage": 13.0, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
+    {"wage": 15.0, "time_range": {start: "2017-01-01", end: "2018-12-31"}}
   ],
   "B": [
-    {"wage": 9.47, "time_range": moment("2014-01-01").twix("2015-03-27", {allDay: true})},
-    {"wage": 11.0, "time_range": moment("2015-03-28").twix("2015-12-31", {allDay: true})},
-    {"wage": 12.5, "time_range": moment("2016-01-01").twix("2016-12-31", {allDay: true})},
-    {"wage": 13.5, "time_range": moment("2017-01-01").twix("2017-12-31", {allDay: true})},
-    {"wage": 15.0, "time_range": moment("2018-01-01").twix("2018-12-31", {allDay: true})}
+    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
+    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
+    {"wage": 12.5, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
+    {"wage": 13.5, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
+    {"wage": 15.0, "time_range": {start: "2018-01-01", end: "2018-12-31"}}
   ],
   "C": [
-    {"wage": 9.47, "time_range": moment("2014-01-01").twix("2015-03-27", {allDay: true})},
-    {"wage": 11.0, "time_range": moment("2015-03-28").twix("2015-12-31", {allDay: true})},
-    {"wage": 12.0, "time_range": moment("2016-01-01").twix("2016-12-31", {allDay: true})},
-    {"wage": 13.0, "time_range": moment("2017-01-01").twix("2017-12-31", {allDay: true})},
-    {"wage": 14.0, "time_range": moment("2018-01-01").twix("2018-12-31", {allDay: true})},
-    {"wage": 15.0, "time_range": moment("2019-01-01").twix("2019-12-31", {allDay: true})}
+    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
+    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
+    {"wage": 12.0, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
+    {"wage": 13.0, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
+    {"wage": 14.0, "time_range": {start: "2018-01-01", end: "2018-12-31"}},
+    {"wage": 15.0, "time_range": {start: "2019-01-01", end: "2019-12-31"}}
   ],
   "D": [
-    {"wage": 9.47, "time_range": moment("2014-01-01").twix("2015-03-27", {allDay: true})},
-    {"wage": 10.0, "time_range": moment("2015-03-28").twix("2015-12-31", {allDay: true})},
-    {"wage": 10.5, "time_range": moment("2016-01-01").twix("2016-12-31", {allDay: true})},
-    {"wage": 11.0, "time_range": moment("2017-01-01").twix("2017-12-31", {allDay: true})},
-    {"wage": 11.5, "time_range": moment("2018-01-01").twix("2018-12-31", {allDay: true})},
-    {"wage": 12.0, "time_range": moment("2019-01-01").twix("2019-12-31", {allDay: true})},
-    {"wage": 13.5, "time_range": moment("2020-01-01").twix("2020-12-31", {allDay: true})},
-    {"wage": 15.0, "time_range": moment("2021-01-01").twix("2021-12-31", {allDay: true})}
+    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
+    {"wage": 10.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
+    {"wage": 10.5, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
+    {"wage": 11.0, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
+    {"wage": 11.5, "time_range": {start: "2018-01-01", end: "2018-12-31"}},
+    {"wage": 12.0, "time_range": {start: "2019-01-01", end: "2019-12-31"}},
+    {"wage": 13.5, "time_range": {start: "2020-01-01", end: "2020-12-31"}},
+    {"wage": 15.0, "time_range": {start: "2021-01-01", end: "2021-12-31"}}
   ],
   "Washington State": [
-    {"wage":9.47,"time_range": moment("2015-01-01").twix("2115-12-31", {allDay: true})} 
+    {"wage":9.47,"time_range": {start: "2015-01-01", end: "2115-12-31"}} 
   ]
 }
 
