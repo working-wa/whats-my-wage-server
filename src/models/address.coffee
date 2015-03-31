@@ -24,4 +24,7 @@ module.exports = (sequelize, DataTypes) ->
       allowNull: true,
       defaultValue: null,
       validate: { min: -180, max: 180 }
+  }, classMethods : {
+    associate: (models) ->
+      Address.hasMany(models.Employer)
   }
