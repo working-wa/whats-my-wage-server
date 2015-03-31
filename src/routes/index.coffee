@@ -1,6 +1,7 @@
 # External Dependencies
 debug = require('debug')('minimum-wage-service')
 express = require 'express'
+request = require 'request'
 
 # Express Components
 router = express.Router()
