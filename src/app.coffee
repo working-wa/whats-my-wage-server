@@ -17,7 +17,7 @@ app.set 'port', process.env.PORT ? 3000
 app.use bodyParser.json()
 app.use bodyParser.urlencoded()
 
-app.use '/', express.static("www/app/www")
+app.use '/', express.static("www/app/platforms/browser/www")
 app.use '/report', express.static("www/report")
 
 # Add routes for attendance service api
