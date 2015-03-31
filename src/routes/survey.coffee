@@ -82,17 +82,18 @@ router.post '/wage', (req, res) ->
 
   intervals = []
 
-  for wageInterval in [0..wageSchedules[schedule].length] by 1
-      current = wageSchedules[schedule][wageInterval]
+  for wageInterval in [0..wageSchedules[schedule].length by 1
+    debug "Wage Interval #{wageInterval}"
+    current = wageSchedules[schedule][wageInterval]
 
-      if schedule == "D"
-        compensation = wageSchedules["C"][wageInterval]
+    if schedule == "D"
+      compensation = wageSchedules["C"][wageInterval]
 
-        if compensation?
-          current.compensation = compensation.wage
+      if compensation?
+        current.compensation = compensation.wage
 
-      if !current.time_range.isPast()
-        intervals.push(current)
+    if !current.time_range.isPast()
+      intervals.push(current)
 
 
   result.intervals = intervals
