@@ -85,12 +85,11 @@ router.post '/wage', (req, res) ->
   debug "Schedule: #{schedule}"
   debug "Schedule: #{wageSchedules[schedule]}"
 
-  for wageInterval in [0..wageSchedules[schedule].length] by 1
-    debug "Wage Interval #{wageInterval}"
-    current = wageSchedules[schedule][wageInterval]
+  for current, i in wageSchedules[schedule]
+    debug "Current: #{JSON.stringify current}"
 
     if schedule == "D"
-      compensation = wageSchedules["C"][wageInterval]
+      compensation = wageSchedules["C"][i]
 
       if compensation?
         current.compensation = compensation.wage
