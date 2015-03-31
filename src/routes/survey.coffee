@@ -82,7 +82,7 @@ router.post '/wage', (req, res) ->
 
   intervals = []
 
-  for wageInterval in wageSchedules[schedule]
+  for wageInterval in [0..wageSchedules[schedule].length] by 1
       current = wageSchedules[schedule][wageInterval]
 
       if schedule == "D"
