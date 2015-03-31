@@ -30,7 +30,7 @@ router.post '/wage_theft/report', (req, res) ->
   for k,v of req.body
     form[wageTheftReportInfo.mapping[k]] = v
 
-  request.post {url: wageTheftReportInfo, form: form}, (err, httpResponse, body) ->
+  request.post {url: wageTheftReportInfo.post_url, form: form}, (err, httpResponse, body) ->
     return res.status(400).json({err, httpResponse, body}).end() if err?
 
     res.status(200).end()
