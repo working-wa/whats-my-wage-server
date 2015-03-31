@@ -17,12 +17,12 @@ router.all '*', (req,res,next) ->
 
 router.get '/wage_theft/report_info', (req, res) ->
   res.json({
-    post_url: "https://docs.google.com/forms/d/1ArpKfNDrrsdNl05VLkT3tECjA0vctk8wnVrMGQSIqIE/formResponse"
+    post_url: "https://docs.google.com/forms/d/12rKqdkVtQTcckc3ZyNp6AY7sZIKlj11k-QVFaAwKjCk/formResponse"
     mapping:
-      "employer[name]": "entry.1223479717"
-      "employee[name]": "entry.1255459603"
-      "employee[email]": "entry.570498028"
-      "employee[phone]": "entry.229881285"
+      "employerName": "entry.1223479717"
+      "employeeName": "entry.1255459603"
+      "employeeEmail": "entry.570498028"
+      "employeePhone": "entry.229881285"
   }).end()
 
 router.use '/employer_size', employer_size_router
