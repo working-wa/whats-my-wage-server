@@ -15,6 +15,7 @@ app.set 'port', process.env.PORT ? 3000
 
 # Add JSON Body Parser Middleware
 app.use bodyParser.json()
+app.use bodyParser.urlencoded()
 
 app.use '/', express.static("www/app/www")
 app.use '/report', express.static("www/report")

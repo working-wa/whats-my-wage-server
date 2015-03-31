@@ -15,15 +15,9 @@ router.all '*', (req,res,next) ->
   res.header("Access-Control-Allow-Headers", "Content-Type, X-Requested-With")
   next()
 
-router.get '/wage_theft/report_info', (req, res) ->
-  res.json({
-    post_url: "https://docs.google.com/forms/d/12rKqdkVtQTcckc3ZyNp6AY7sZIKlj11k-QVFaAwKjCk/formResponse"
-    mapping:
-      "employerName": "entry.1223479717"
-      "employeeName": "entry.1255459603"
-      "employeeEmail": "entry.570498028"
-      "employeePhone": "entry.229881285"
-  }).end()
+router.post '/wage_theft/report', (req, res) ->
+  debug "Req: #{JSON.stringify req.body}"
+  res.end()
 
 router.use '/employer_size', employer_size_router
 router.use '/survey', survey_router
