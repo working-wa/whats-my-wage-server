@@ -6,6 +6,7 @@ require 'twix'
 
 questions = require '../data/questions.json'
 notes = require '../data/notes.json'
+wageSchedules = require '../data/wage-schedules.json'
 
 # Express Components
 router = express.Router()
@@ -19,47 +20,6 @@ router.get '/question', (req, res) ->
 
 router.get '/note', (req, res) ->
   res.json(notes).end()
-
-# A = Schedule 1 employers (more than 500 employees in the U.S.)
-# B = Schedule 1 employers (more than 500 emp1loyees in the U.S.) with medical benefits
-# C = Schedule 2 employers (500 or fewer employees in the U.S.) with minimum compensation
-# D = Schedule 2 employers (500 or fewer employees in the U.S.)
-wageSchedules = {
-  "A": [
-    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
-    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
-    {"wage": 13.0, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
-    {"wage": 15.0, "time_range": {start: "2017-01-01", end: "2018-12-31"}}
-  ],
-  "B": [
-    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
-    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
-    {"wage": 12.5, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
-    {"wage": 13.5, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
-    {"wage": 15.0, "time_range": {start: "2018-01-01", end: "2018-12-31"}}
-  ],
-  "C": [
-    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
-    {"wage": 11.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
-    {"wage": 12.0, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
-    {"wage": 13.0, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
-    {"wage": 14.0, "time_range": {start: "2018-01-01", end: "2018-12-31"}},
-    {"wage": 15.0, "time_range": {start: "2019-01-01", end: "2019-12-31"}}
-  ],
-  "D": [
-    {"wage": 9.47, "time_range": {start: "2014-01-01", end: "2015-03-27"}},
-    {"wage": 10.0, "time_range": {start: "2015-03-28", end: "2015-12-31"}},
-    {"wage": 10.5, "time_range": {start: "2016-01-01", end: "2016-12-31"}},
-    {"wage": 11.0, "time_range": {start: "2017-01-01", end: "2017-12-31"}},
-    {"wage": 11.5, "time_range": {start: "2018-01-01", end: "2018-12-31"}},
-    {"wage": 12.0, "time_range": {start: "2019-01-01", end: "2019-12-31"}},
-    {"wage": 15.75, "time_range": {start: "2020-01-01", end: "2020-12-31"}},
-    {"wage": 16.49, "time_range": {start: "2021-01-01", end: "2021-12-31"}}
-  ],
-  "Washington State": [
-    {"wage":9.47,"time_range": {start: "2015-01-01", end: "2115-12-31"}}
-  ]
-}
 
 router.post '/wage', (req, res) ->
   {answers} = req.body
@@ -82,8 +42,8 @@ router.post '/wage', (req, res) ->
 
   intervals = []
 
-  debug "Schedule: #{schedule}"
-  debug "Schedule: #{wageSchedules[schedule]}"
+  debug "Schedule Looked Up: #{schedule}"
+  debug "Full Schedule: #{JSON.stringify wageSchedules[schedule]}"
 
   for current, i in wageSchedules[schedule]
     debug "Current: #{JSON.stringify current}"
