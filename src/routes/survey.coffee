@@ -57,7 +57,7 @@ wageSchedules = {
     {"wage": 15.0, "time_range": {start: "2021-01-01", end: "2021-12-31"}}
   ],
   "Washington State": [
-    {"wage":9.47,"time_range": {start: "2015-01-01", end: "2115-12-31"}} 
+    {"wage":9.47,"time_range": {start: "2015-01-01", end: "2115-12-31"}}
   ]
 }
 
@@ -94,7 +94,7 @@ router.post '/wage', (req, res) ->
       if compensation?
         current.compensation = compensation.wage
 
-    if !current.time_range.isPast()
+    if !moment(current.time_range.start).twix(current.time_range.end,{allDay: true}).isPast()
       intervals.push(current)
 
 
