@@ -2,6 +2,7 @@
 
 ## Setup
 
+* Initialize environment variables - `source bin/prepare_environment.bash`
 * Install dependencies - `npm install`
 * Run Server - `npm start`
 
@@ -54,6 +55,7 @@ No Output
 
 #### Example Input
 
+```
 {
   "employer":{ "name":"Starbucks"},
   "employee": {
@@ -62,6 +64,7 @@ No Output
     "phone": "[Employee Phone Number]"
   }
 }
+```
 
 #### Example Output
 
@@ -71,6 +74,7 @@ No Output
 
 #### Example Input
 
+```
 {
   "employer":{ "name":"Starbucks"},
   "employee": {
@@ -80,6 +84,7 @@ No Output
     "comments": "[Comments]"
   }
 }
+```
 
 #### Example Output
 
