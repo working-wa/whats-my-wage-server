@@ -58,7 +58,7 @@ wageTheftConfig =
       phone: "Phone number"
   error_msg: "Unable to add wage theft report"
 
-router.post '/wage_theft/report', createGoogleSpreadsheetEndpoint(wageTheftConfig)
+router.post '/wage_theft/report', createGoogleSpreadsheetEndpoint wageTheftConfig
 
 contactUsConfig =
   spreadsheet:
