@@ -2,6 +2,7 @@
 
 ## Setup
 
+* Initialize environment variables - `source bin/prepare_environment.bash`
 * Install dependencies - `npm install`
 * Run Server - `npm start`
 
@@ -21,14 +22,16 @@
 
 ## Endpoints Offered
 
-### `POST` "/v1/employer_size/report" - To set attendance count for a single minute
+### `POST` "/v1/employer_size/report" - To contribute an employer size report
 
 #### Example Input
 
+```
 {
   "employer":{ "name":"Starbucks", "address": {"street":"100 Union Street"}},
   "size":"small",
 }
+```
 
 #### Example Output
 
@@ -40,7 +43,56 @@ No Output
 
 *Query String*: name=[employer name]&address=[address]
 
+#### Example Output
+
+```
+{
+  "size":"[small|large]"
+}
+```
+
+### `POST` "/v1/wage_theft/report" - To contribute a wage theft report
+
+#### Example Input
+
+```
+{
+  "employer":{ "name":"Starbucks"},
+  "employee": {
+    "name": "[Employee Name]",
+    "email": "[Employee Email]",
+    "phone": "[Employee Phone Number]"
+  }
+}
+```
+
+#### Example Output
+
+No Output
+
+### `POST` "/v1/contact_us" - To request a contact from Working Washington
+
+#### Example Input
+
+```
+{
+  "employer":{ "name":"Starbucks"},
+  "employee": {
+    "name": "[Employee Name]",
+    "email": "[Employee Email]",
+    "phone": "[Employee Phone Number]"
+    "comments": "[Comments]"
+  }
+}
+```
+
+#### Example Output
+
+No Output
+
 ## Testing
+
+TODO: Update tests
 
 * Run `npm test`
 * Currently using mocha as the test runner and chai-http to run integration tests against the service
